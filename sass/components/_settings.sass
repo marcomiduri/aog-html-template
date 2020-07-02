@@ -1,0 +1,110 @@
+/****Grid layout settings****/
+
+$col-1: 8.33333333%
+$col-2: 16.66666667%
+$col-2-5: 20%
+$col-3: 25%
+$col-4: 33.33333333%
+$col-5: 41.66666667%
+$col-6: 50%
+$col-7: 58.33333333%
+$col-8: 66.66666667%
+$col-9: 75%
+$col-10: 83.33333333%
+$col-11: 91.66666667%
+$col-12: 100%
+
+$dw-sd: 480px
+$dw-ssd: 560px
+$dw-md: 640px
+$dw-smd: 780px
+$dw-ld: 960px
+$dw-xld: 1100px
+
+$offset: 50px
+$offset-0: 0px
+
+=col($col, $offset)
+	width: calc(#{$col} - #{$offset})
+
+=grid($col, $offset)
+	flex-basis: calc(#{$col} - #{$offset})
+
+=device-col($dw, $col-dw, $offset)
+	@media screen and (min-width: #{$dw})
+		width: calc(#{$col-dw} - #{$offset})
+
+=device-grid($dw, $col-dw, $offset)
+	@media screen and (min-width: #{$dw})
+		flex-basis: calc(#{$col-dw} - #{$offset})
+		
+
+/*General for documetn settings*/
+$global-font: 'Poppins', sans-serif
+$font: 'Inter', sans-serif
+$font-size: 16px
+$min-font-size: 16px
+$dw-toggle-size: 640px
+
+/*Color*/
+$f-color: #1A1A1A
+$h-color: #ec5d2b
+$input-color: #000
+/*ADD NEW COLORS VAR*/
+
+
+/*Typography*/
+$h2-size: 47px
+$h2-min-size: 32px
+$h3-size: 24px
+$h4-size: 26px
+$h5-size: 20px
+$h6-size: 18px
+
+/*h1*/
+$h1-size: 80px
+$h1-min-size: 40px
+$margin-h1: 16px 0px 16px 0px
+
+/*navbar*/
+$margin-nav-offest: 0px 0px 0px 58px
+$margin-nav-min-offest: 12px 12px 12px 12px
+$nav-size: 16px
+$font-nav: 'Product Sans', sans-serif
+
+/*navigation icon*/
+$nav-toggle-background: #000
+$nav-toggle-background-open: #fff
+$nav-line-height: 2px
+$dw-width-nav-toggle: 1100px
+$w-nav-icon: 30px
+$h-nav-icon: 20px
+$l-pos-1: 4px
+$l-pos-2: 9px
+$l-pos-3: 14px
+
+/*container*/
+$display-width: 1140px
+$container-pading: 22px
+$container-max-pading: 20px
+
+/*wrapper*/
+$wrap-size: 730px
+$wrap-pading: 42px
+$text-align-wrapper: left
+
+/*section wrapper*/
+$padding-section-block: 40px 0px
+$min-padding-section-block: 0px
+$margin-section-block : 0px
+$min-margin-section-block: 0px
+$dw-width-section: 640px
+
+/*container wrapper*/
+$container-wrapper-margin: 40px 0px
+$container-wrapper-padding: 0px
+$min-container-wrapper-margin: 40px 0px
+$min-container-wrapper-padding: 0px
+
+/*btn up*/
+$btn-up-backgound: #333

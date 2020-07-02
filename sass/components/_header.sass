@@ -1,0 +1,95 @@
+.header
+    width: 100%
+    background: #fff
+    padding: 22px
+    margin: auto
+    z-index: 5
+    font-weight: 600
+    max-width: 1920px
+    @media screen and (min-width: #{$dw-sd})
+        padding: 22px 47px
+    @media screen and (min-width: 1320px)
+        width: 84%
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: 28px
+    .logo
+        max-width: 200px
+
+    .enter
+        margin-left: auto
+        display: none
+        @media screen and (min-width: #{$dw-md})
+            display: block
+        @media screen and (min-width: #{$dw-xld})
+            margin-left: 0
+        li
+            cursor: pointer
+            font-weight: 
+            margin-right: 32px
+            @media screen and (min-width: #{$dw-xld})
+                margin-left: 32px
+                margin-right: 0
+    
+    .navicon
+        @media screen and (min-width: #{$dw-md})
+            height: 62px
+            display: flex
+            align-items: center
+            border-left: 1px solid #000
+            padding-left: 47px
+        @media screen and (min-width: #{$dw-xld})
+            display: none
+    
+    .navbar
+        display: block
+        position: absolute
+        min-height: 100vh
+        width: 100vw
+        z-index: 6
+        overflow: hidden
+        top: 0
+        left: 0
+        transition: 0.3s
+        pointer-events: none
+        background: rgba(0, 0, 0, 0)
+        @media screen and (min-width: #{$dw-xld})
+            position: static
+            background: transparent
+            width: auto
+            min-height: auto
+            overflow: visible
+            pointer-events: initial
+        &.open
+            background: rgba(0, 0, 0, 0.6)
+            pointer-events: initial
+            .navbar__list
+                transform: translateX(0)
+        &__list
+            min-height: 100vh
+            width: 35vw
+            min-width: 250px
+            background: #ffffff
+            padding-top: 10px
+            transition: 0.3s 
+            transform: translateX(-100%)
+            @media screen and (min-width: #{$dw-xld})
+                transform: translateX(0)
+                padding-top: 0px
+                min-height: auto
+                width: auto
+                background: transparent
+
+        li
+            &:last-child
+                @media screen and (min-width: #{$dw-md})
+                    display: none
+
+            &.navbar__logo
+                display: block
+                margin-bottom: 40px
+                @media screen and (min-width: #{$dw-xld})
+                    display: none
+        a
+            font-weight: 600
