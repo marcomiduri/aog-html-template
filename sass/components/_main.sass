@@ -1,3 +1,28 @@
+.lines
+    width: calc(100% - 40px)
+    position: absolute
+    display: flex
+    top: 0
+    left: 0
+    height: 100%
+    border-left: 1px solid #DCDCDC 
+    border-right: 1px solid #DCDCDC 
+    left: 50%
+    transform: translateX(-50%)
+    opacity: 0.5
+    pointer-events: none
+    z-index: 5
+    @media screen and (min-width: #{$dw-xld})
+        width: 66%
+
+    .line
+        display: block
+        width: 1px
+        height: 100%
+        background: #DCDCDC 
+        &:nth-child(1)
+            margin: 0px 21.94vw
+    
 .banner
     position: relative
     background-image: url('../img/jpg/banner_bg.jpg')
@@ -30,6 +55,28 @@
         color: #ffffff
 
 
+
+    &__blue //about page
+        .overlay
+            background: rgba(44, 93, 229, 0.5)
+        
+        .container
+            width: 100%
+            margin: auto
+            padding: 19.93vw 20px 4.29vw
+            max-width: 1920px
+            @media screen and (min-width: #{$dw-xld})
+                width: 66%
+                padding: 15.36vw 20px 4.74vw
+
+    &__company
+        background-image: url('../img/jpg/banner_company_bg.jpg')
+    
+    &__investors
+        background-image: url('../img/jpg/banner_investors_bg.jpg')
+    
+    &__shareholders
+        background-image: url('../img/jpg/banner_investors_bg.jpg')
 //===========================about===============
 
 .about
@@ -126,3 +173,436 @@
     .btn
         margin-top: auto
         position: relative
+
+
+//****************about page content section******************//
+
+.content
+    position: relative
+    overflow: hidden
+    .container
+        width: 100%
+        margin: auto
+        padding: 8.1vw 20px 7.6vw
+        max-width: 1920px
+        color: #1A1A1A
+        @media screen and (min-width: #{$dw-xld})
+            width: 66%
+    
+    &__svg
+        position: absolute
+        &:nth-child(1)
+            bottom: 0   
+            left: 0
+            width: 60.05vw
+            height: 28.45vw
+            bottom: -14.54vw
+        &:nth-child(2)
+            top: 0   
+            right: 0
+            width: 61.07vw
+            height: 37.8vw
+    &__title
+        margin-bottom: 30px
+        position: relative
+        z-index: 1
+    
+    &__description
+        margin-bottom: 30px
+        font-size: 18px
+        line-height: 28px
+        position: relative
+        z-index: 1
+        @media screen and (min-width: #{$dw-smd})
+            font-size: 28px
+            line-height: 38px
+    
+    &__paragraph
+        max-width: 90%
+        width: 100%
+        display: block
+        margin: auto
+        font-size: 14px
+        position: relative
+        z-index: 1
+        @media screen and (min-width: #{$dw-smd})
+            max-width: 60%
+        @media screen and (min-width: #{$dw-xld})
+            max-width: 30vw
+
+.workers
+    padding: 40px 0px
+    background: #a1a1a1
+    .container 
+        background: #fff
+        width: 100%
+        margin-left: auto
+        padding: 40px 0 40px 8%
+        @media screen and (min-width: #{$dw-xld})
+            width: 90%
+        
+    &__title
+        margin-bottom: 30px
+    
+    &__slider
+        display: flex
+        justify-content: space-between
+        align-items: stretch
+    
+    .slider
+        &__item
+            width: calc(25% - 35px)
+            cursor: pointer
+            display: flex
+            flex-direction: column
+            h5, span
+                transition: 0.3s ease
+            
+            span
+                color: #616468
+                font-size: 16px
+                font-weight: 600
+                display: block
+                min-width: 120px
+                margin-bottom: 30px
+            &:hover
+                h5, span
+                    color: #2C5DE5
+                img
+                    opacity: 0.5
+        
+        &__img
+            height: 25vw
+            position: relative
+            overflow: hidden
+            background: #2C5DE5
+            margin-top: auto
+            img
+                height: 100%
+                width: 100%
+                transition: all 0.3s ease
+    
+    &__modal
+        position: fixed
+        top: 0
+        left: 0
+        opacity: 0
+        pointer-events: none
+        width: 100%
+        height: 100vh
+        z-index: 10
+        transition: 0.3s
+        background: rgba(0, 0, 0, 0.6)
+        &.open
+            opacity: 1
+            pointer-events: initial
+        .modal
+            &__inner
+                background: #fff
+                padding: 100px
+                width: 74.64%
+                h5
+                    font-size: 30px
+                
+                p
+                    margin-top: 30px
+            &__img
+                overflow: hidden
+                position: relative
+                height: 25vw
+                img
+                    height: 100%
+                    width: 100%
+
+
+/********investors stylesheets*********/
+.investors
+    .content__description
+        display: block
+        margin-bottom: 60px
+        font-size: 18px
+        line-height: 28px
+        color: #1A1A1A 
+        max-width: 813px
+        @media screen and (min-width: #{$dw-smd})
+            font-size: 28px
+            line-height: 38px
+    &__content
+        .container
+            width: 100%
+            padding: 8.27vw 20px 7.68vw
+            margin: auto
+            @media screen and (min-width: #{$dw-xld})
+                width: 66%
+        .content
+            &__paragraph
+                max-width: 90%
+                width: 100%
+                display: block
+                margin: auto
+                font-size: 16px
+                color: #1A1A1A
+                margin-bottom: 6.5vw
+                @media screen and (min-width: #{$dw-smd})
+                    max-width: 50%
+                    padding-left: 3.4vw
+                @media screen and (min-width: #{$dw-xld})
+                    max-width: 26.2vw
+
+                .btn__text
+                    margin-top: 18px
+
+            &__notification
+                background-color: #000118
+                color: #fff
+                padding: 12px 20px
+                background-image: url('../img/svg/notification_bg.svg')
+                background-repeat: no-repeat
+                background-size: cover
+                @media screen and (min-width: #{$dw-md})
+                    padding: 34px 80px
+                
+                h6
+                    font-weight: bold
+                    font-size: 22px
+                    line-height: 39px
+                    margin-bottom: 12px
+                    font-family: 'Poppins', sans-serif
+                p
+                    font-size: 18px
+                    line-height: 26px
+                    opacity: 0.8
+                
+                strong
+                    font-weight: bold
+
+    &__texts
+        background: #F4F5F9
+        .container
+            width: 100%
+            padding: 10.833vw 20px 6.55vw
+            margin: auto
+            @media screen and (min-width: #{$dw-xld})
+                width: 66%
+
+        .texts
+            &__italic
+                span
+                    font-style: italic
+                    display: block
+                    max-width: 256px
+                    font-size: 14px
+                    line-height: 144.02%
+                    margin-bottom: 40px
+                    @media screen and (min-width: #{$dw-smd})
+                       margin-bottom: 0px
+                    
+                    &:before
+                        content: ''
+                        display: block
+                        margin-bottom: 10px
+                        width: 41px
+                        height: 3px
+                        background: #2C5DE5
+                        @media screen and (min-width: #{$dw-smd})
+                            width: 2.44vw
+                            height: 0.18vw
+            &__paragraph
+                p
+                    color: #1A1A1A
+                    font-size: 14px
+                    line-height: 135.02%
+                    margin-bottom: 15px
+                    max-width: 505px
+                    display: block
+        
+    &__contact
+        .container
+            width: 100%
+            padding: 7.32vw 20px 9.64vw
+            margin: auto
+            @media screen and (min-width: #{$dw-xld})
+                width: 66%
+        
+        .icon
+            display: block
+            position: relative
+            width: 70px
+            height: 70px
+            padding: 17px 15px
+            border-radius: 11px
+            background: #FFFFFF
+            margin-right: 21px
+            box-shadow: 0px 1.46302px 3.99006px rgba(32, 32, 32, 0.0444282), 0px 4.91399px 13.4018px rgba(32, 32, 32, 0.0655718), 0px 22px 60px rgba(32, 32, 32, 0.11)
+
+        .list__address, .tel a
+            font-weight: 600
+            font-size: 20px
+            line-height: 143.02%
+            font-family: 'Poppins', sans-serif
+        
+        article
+            margin-top: 57px
+            display: flex
+
+/********shareholders stylesheets*********/
+
+.shareholders
+    .container
+        width: 100%
+        margin: auto
+        @media screen and (min-width: #{$dw-xld})
+            width: 66%
+    &__title
+        .container
+            padding: 66px 20px
+
+        article
+            display: flex
+            align-items: center
+        .title
+            &__photo
+                width: 113px
+                height: 113px
+                position: relative
+                text-align: center
+                margin-right: 26px
+                img
+                    width: 100%
+                    height: 100%
+            
+            &__welcome
+                font-weight: 600
+                font-size: 30px
+                line-height: 45px
+                color: #1A1A1A
+
+        
+    &__information
+        background: #F4F5F9
+        .container
+            padding: 7.56vw 20px 10vw
+        
+        .information
+            &__title
+                margin-bottom: 55px
+                display: flex
+                align-items: center
+                .title__icon
+                    display: block
+                    position: relative
+                    width: 70px
+                    height: 70px
+                    padding: 17px 15px
+                    border-radius: 11px
+                    background: #FFFFFF
+                    margin-right: 21px
+                    box-shadow: 0px 1.46302px 3.99006px rgba(32, 32, 32, 0.0444282), 0px 4.91399px 13.4018px rgba(32, 32, 32, 0.0655718), 0px 22px 60px rgba(32, 32, 32, 0.11)
+                    img
+                        width: 100%
+                        height: 100%
+                
+                .title__text
+                    font-weight: 600
+                    font-size: 30px
+                    line-height: 45px
+                    color: #1A1A1A
+            
+            &__items
+                .item
+                    padding: 36px 40px 48px
+                    background: #FFFFFF
+                    box-shadow: 0px 1.46302px 3.99006px rgba(32, 32, 32, 0.0444282), 0px 4.91399px 13.4018px rgba(32, 32, 32, 0.0655718), 0px 22px 60px rgba(32, 32, 32, 0.11)
+                    border-radius: 11px
+
+                    .title
+                        color: #C1C7D0
+                        font-weight: 500
+                        font-size: 16px
+                        line-height: 26px
+                        display: block
+                        margin-bottom: 14px
+
+                    .inner
+                        display: block
+                        font-weight: bold
+                        font-size: 36px
+                        line-height: 26px
+                        color: #1A1A1A
+
+    &__dashboards
+        background: #2C5DE5
+        .container
+            padding: 6.49vw 20px 13.1vw
+            @media screen and (min-width: #{$dw-xld})
+                padding: 6.49vw 0px 13.1vw
+        
+        table
+            border-spacing: 0px
+            border-collapse: collapse
+            margin-bottom: 14px
+            width: 100%
+            &:last-child
+                margin-bottom: 0
+            thead
+                background: #EDEDED
+                font-weight: 500
+                font-size: 14px
+                line-height: 26px
+                color: #1A1A1A
+                text-align: left
+                th
+                    padding: 16px 0px 12px 0px
+                    &:first-child
+                        border-radius: 10px 0px 0px 0px
+                        padding-left: 42px
+                    &:last-child
+                        border-radius: 0px 10px 0px 0px
+                        width: 120px
+            tbody
+                background: #fff
+                tr
+                    &:last-child
+                        td
+                            padding: 31px 0px 36px 0px
+                            border: none
+                            &:first-child
+                                border-radius: 0px 0px 0px 10px
+                                padding-left: 42px
+                            &:last-child
+                                border-radius: 0px 0px 10px 0px
+
+                td
+                    padding: 31px 0px 10px 0px
+                    border-bottom: 1px solid #dee2e6
+                    &:first-child
+                        padding-left: 42px
+        
+
+        .contact__info
+            padding: 35px 48px 0px
+            background: #FFFFFF
+            border-radius: 10px
+            border: 1px solid #E1E3EB
+            &>div
+                padding-bottom: 44px
+                margin-bottom: 44px
+                border-bottom: 1px solid #E1E3EB
+                &:last-child
+                    border: none
+            .name
+                font-weight: 500
+                font-size: 14px
+                line-height: 26px
+                color: #1A1A1A
+
+            .description
+                font-weight: 600
+                font-size: 22px
+                line-height: 27px
+                color: #1A1A1A
+                margin-top: 6px
+                display: block
+        
+    &__beneficiaries
+        margin-top: 80px
