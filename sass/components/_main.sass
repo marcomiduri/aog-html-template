@@ -46,7 +46,7 @@
         max-width: 1920px
         @media screen and (min-width: #{$dw-xld})
             width: 66%
-            padding: 25.36vw 20px 7.74vw
+            padding: 25.36vw 0px 7.74vw
 
     &__title
         position: relative
@@ -66,7 +66,7 @@
             max-width: 1920px
             @media screen and (min-width: #{$dw-xld})
                 width: 66%
-                padding: 15.36vw 20px 4.74vw
+                padding: 15.36vw 0px 4.74vw
 
     &__company
         background-image: url('../img/jpg/banner_company_bg.jpg')
@@ -90,6 +90,7 @@
         max-width: 1920px
         @media screen and (min-width: #{$dw-xld})
             width: 66%
+            padding: 9.94vw 0px 11.85vw
     &__title
         margin-bottom: 30px
         @media screen and (min-width: #{$dw-smd})
@@ -112,6 +113,7 @@
         max-width: 1920px
         @media screen and (min-width: #{$dw-xld})
             width: 66%
+            padding: 11.61vw 0px 4.14vw
     &__item
         display: flex
         flex-direction: column
@@ -187,6 +189,7 @@
         color: #1A1A1A
         @media screen and (min-width: #{$dw-xld})
             width: 66%
+            padding: 8.1vw 0px 7.6vw
     
     &__svg
         position: absolute
@@ -231,26 +234,21 @@
 
 .workers
     padding: 40px 0px
-    background: #a1a1a1
+    background: #F4F5F9
     .container 
         background: #fff
         width: 100%
-        margin-left: auto
-        padding: 40px 0 40px 8%
+        padding: 40px 20px 40px
         @media screen and (min-width: #{$dw-xld})
-            width: 90%
+            margin-left: auto
+            width: 93.7%
+            padding: 40px 0 40px 10.8%
         
     &__title
         margin-bottom: 30px
     
-    &__slider
-        display: flex
-        justify-content: space-between
-        align-items: stretch
-    
     .slider
         &__item
-            width: calc(25% - 35px)
             cursor: pointer
             display: flex
             flex-direction: column
@@ -263,7 +261,8 @@
                 font-weight: 600
                 display: block
                 min-width: 120px
-                margin-bottom: 30px
+                height: 70px
+
             &:hover
                 h5, span
                     color: #2C5DE5
@@ -272,6 +271,7 @@
         
         &__img
             height: 25vw
+            min-height: 400px
             position: relative
             overflow: hidden
             background: #2C5DE5
@@ -280,6 +280,19 @@
                 height: 100%
                 width: 100%
                 transition: all 0.3s ease
+    
+    .owl-dots
+        margin-top: 58px
+        button
+            background: #BFD0FD
+            border-radius: 3px
+            width: 40px
+            height: 3px
+            margin-right: 8px
+            &:focus
+                outline: none
+            &.active
+                background: #2C5DE5
     
     &__modal
         position: fixed
@@ -333,6 +346,7 @@
             margin: auto
             @media screen and (min-width: #{$dw-xld})
                 width: 66%
+                padding: 8.27vw 0px 7.68vw
         .content
             &__paragraph
                 max-width: 90%
@@ -383,6 +397,7 @@
             margin: auto
             @media screen and (min-width: #{$dw-xld})
                 width: 66%
+                padding: 10.833vw 0px 6.55vw
 
         .texts
             &__italic
@@ -422,6 +437,7 @@
             margin: auto
             @media screen and (min-width: #{$dw-xld})
                 width: 66%
+                padding: 7.32vw 0px 9.64vw
         
         .icon
             display: block

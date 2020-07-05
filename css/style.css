@@ -87,6 +87,7 @@ h5 {
   background: #2C5DE5;
   color: #fff;
   font-weight: 600;
+  border: none;
 }
 
 .btn.light {
@@ -420,6 +421,10 @@ h5 {
   font-weight: 600;
 }
 
+.header .navbar a:hover {
+  color: #2C5DE5;
+}
+
 .lines {
   width: calc(100% - 40px);
   position: absolute;
@@ -491,7 +496,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .banner .container {
     width: 66%;
-    padding: 25.36vw 20px 7.74vw;
+    padding: 25.36vw 0px 7.74vw;
   }
 }
 
@@ -515,7 +520,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .banner__blue .container {
     width: 66%;
-    padding: 15.36vw 20px 4.74vw;
+    padding: 15.36vw 0px 4.74vw;
   }
 }
 
@@ -547,6 +552,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .about .container {
     width: 66%;
+    padding: 9.94vw 0px 11.85vw;
   }
 }
 
@@ -580,6 +586,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .links .container {
     width: 66%;
+    padding: 11.61vw 0px 4.14vw;
   }
 }
 
@@ -685,6 +692,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .content .container {
     width: 66%;
+    padding: 8.1vw 0px 7.6vw;
   }
 }
 
@@ -752,19 +760,20 @@ h5 {
 
 .workers {
   padding: 40px 0px;
-  background: #a1a1a1;
+  background: #F4F5F9;
 }
 
 .workers .container {
   background: #fff;
   width: 100%;
-  margin-left: auto;
-  padding: 40px 0 40px 8%;
+  padding: 40px 20px 40px;
 }
 
 @media screen and (min-width: 1100px) {
   .workers .container {
-    width: 90%;
+    margin-left: auto;
+    width: 93.7%;
+    padding: 40px 0 40px 10.8%;
   }
 }
 
@@ -772,20 +781,7 @@ h5 {
   margin-bottom: 30px;
 }
 
-.workers__slider {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-
 .workers .slider__item {
-  width: calc(25% - 35px);
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -808,7 +804,7 @@ h5 {
   font-weight: 600;
   display: block;
   min-width: 120px;
-  margin-bottom: 30px;
+  height: 70px;
 }
 
 .workers .slider__item:hover h5, .workers .slider__item:hover span {
@@ -821,6 +817,7 @@ h5 {
 
 .workers .slider__img {
   height: 25vw;
+  min-height: 400px;
   position: relative;
   overflow: hidden;
   background: #2C5DE5;
@@ -833,6 +830,26 @@ h5 {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.workers .owl-dots {
+  margin-top: 58px;
+}
+
+.workers .owl-dots button {
+  background: #BFD0FD;
+  border-radius: 3px;
+  width: 40px;
+  height: 3px;
+  margin-right: 8px;
+}
+
+.workers .owl-dots button:focus {
+  outline: none;
+}
+
+.workers .owl-dots button.active {
+  background: #2C5DE5;
 }
 
 .workers__modal {
@@ -906,6 +923,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .investors__content .container {
     width: 66%;
+    padding: 8.27vw 0px 7.68vw;
   }
 }
 
@@ -982,6 +1000,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .investors__texts .container {
     width: 66%;
+    padding: 10.833vw 0px 6.55vw;
   }
 }
 
@@ -1034,6 +1053,7 @@ h5 {
 @media screen and (min-width: 1100px) {
   .investors__contact .container {
     width: 66%;
+    padding: 7.32vw 0px 9.64vw;
   }
 }
 

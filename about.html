@@ -10,6 +10,7 @@
 		<!--[if gt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		<link rel="stylesheet" href="css/owl.carousel.min.css"/>
 		<link rel="stylesheet" href="css/style.min.css"/>
 	</head>
 	<body>
@@ -97,7 +98,7 @@
 
 					<h4 class="workers__title">Leadership</h4>
 
-					<div class="workers__slider">
+					<div class="workers__slider owl-carousel">
 
 						<div class="slider__item">
 							<h5>Monte Holm</h5>
@@ -132,6 +133,24 @@
 
 							<div class="slider__img">
 								<img src="img/jpg/workers1.jpg" alt="worker">
+							</div>
+						</div>
+
+						<div class="slider__item">
+							<h5>Jeff Levitan </h5>
+							<span>Director</span>
+
+							<div class="slider__img">
+								<img src="img/jpg/workers2.jpg" alt="worker">
+							</div>
+						</div>
+
+						<div class="slider__item">
+							<h5>Jason Lindsey</h5>
+							<span>Director, President & Chief Executive Officer</span>
+
+							<div class="slider__img">
+								<img src="img/jpg/workers3.jpg" alt="worker">
 							</div>
 						</div>
 
@@ -193,11 +212,41 @@
 			</div>
 		</div>
 		<!-- end modal box -->
-
-        <script src="js/lib/grid.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="js/lib/grid.js"></script>
+		<script src="js/lib/owl.carousel.min.js"></script>
 		<script src="js/script.js"></script>
 
 		<script>
+			$(document).ready(function(){
+				$(".workers__slider").owlCarousel({
+					items: 4,
+					margin: 32,
+					responsive:{
+						0:{
+							items:1,
+							dots:true,
+							nav:false
+						},
+						640:{
+							dots:true,
+							nav:false,
+							items:2
+						},
+						960:{
+							dots:true,
+							nav:false,
+							items:3
+						},
+						1100:{
+							dots:true,
+							nav:false,
+							items:4
+						},
+					}
+				});
+			});
+
 			const sliderItem = document.querySelectorAll('.slider__item');
 			const modalBoxSlider = document.querySelector('.workers__modal');
 
