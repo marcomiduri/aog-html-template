@@ -320,27 +320,34 @@
             position: fixed
             top: 50%
             z-index: 2
-            @media screen and (min-width: #{$dw-xld})
-                &.prev
-                    left: 5%
-                &.next
-                    right: 5%
+
             &.prev
                 left: 0%
                 transform: translateY(-50%) rotate(180deg)
+                @media screen and (min-width: #{$dw-xld})
+                    left: 5%
             &.next
                 right: 0%
                 transform: translateY(-50%)
+                @media screen and (min-width: #{$dw-xld})
+                    right: 6%
         .modal
             &__inner
                 background: #fff
                 padding: 20px
                 width: 80%
+                position: relative
                 margin-bottom: 200px
                 transform: translateY(10%)
                 @media screen and (min-width: #{$dw-xld})
                     padding: 100px
                     width: 74.64%
+                
+                .close__modal
+                    position: absolute
+                    top: -7%
+                    right: -5%
+
                 h5
                     font-size: 30px
                 
@@ -743,13 +750,19 @@
             opacity: 1
             pointer-events: initial
         .inner__box
-            max-width: 571px
+            width: 80%
             padding: 18px 20px 20px
             background: #fff
             transform: translateY(30%)
             margin-bottom: 300px
+            position: relative
             @media screen and (min-width: #{$dw-md})
                 padding: 58px 90px 90px
+                max-width: 571px
+        .close__modal
+            position: absolute
+            top: -7%
+            right: -5%
         .f-item
             margin-bottom: 21px
         .title

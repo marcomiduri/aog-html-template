@@ -386,6 +386,7 @@
 
 		<div class="shareholders__modal">
 			<div class="inner__box">
+				<span class="close__modal"></span>
 				<h5 class="title">Add Beneficiary</h5>
 
 				<form action="">
@@ -443,6 +444,8 @@
 			const modalBeneficiaries = document.querySelector('.shareholders__modal');
 			const addBeneficiaries = document.querySelector('.shareholders .shareholders__beneficiaries .btn__add');
 
+			const closeModal = modalBeneficiaries.querySelector('.close__modal');
+
 			addBeneficiaries.addEventListener('click', ()=>{
 				modalBeneficiaries.classList.add('open');
 				document.body.setAttribute('style', 'overflow: hidden');
@@ -453,6 +456,11 @@
 					this.classList.remove('open');
 					document.body.removeAttribute('style');
 				}
+			})
+
+			closeModal.addEventListener('click', ()=>{
+				modalBeneficiaries.classList.remove('open');
+				document.body.removeAttribute('style');
 			})
 		</script>
     </body>

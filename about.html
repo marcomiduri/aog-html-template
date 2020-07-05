@@ -199,7 +199,7 @@
 			<span class="arrow__btn prev"></span>
 			<span class="arrow__btn next"></span>
 			<div class="modal__inner flex flex-sb">
-
+				<span class="close__modal"></span>
 				<div class="modal__img f-item" data-cols="12" data-smd-cols="4" data-offset="10">
 					<img src="img/jpg/banner_bg.jpg" alt="workers">
 				</div>
@@ -266,11 +266,12 @@
 
 			const arrowNext = modalBoxSlider.querySelector('.next');
 			const arrowPrev = modalBoxSlider.querySelector('.prev');
+			const closeModal = modalBoxSlider.querySelector('.close__modal');
 
 			sliderItem.forEach((item, i) => {
 				item.addEventListener('click', function(){
 					count = i;
-					sliderItem[count].classList.add('show');
+					sliderItem[count].classList.add('active');
 					modalBoxSlider.classList.add('open');
 					document.body.setAttribute('style', 'overflow: hidden');
 					addContentModal(this);
@@ -279,27 +280,32 @@
 				return count;
 			});
 			
-			
+			const addClassBox = (item)=>{
+				sliderItem[item].classList.add('active');
+				if(sliderItem[item].classList.contains('active')){
+					addContentModal(sliderItem[item])
+				}
+			}
 			arrowPrev.addEventListener('click', ()=>{
 				count--;
+				sliderItem[count + 1].classList.remove('active');
 				if(count < 0){
 					count = sliderItem.length - 1;
+
+					sliderItem[0].classList.remove('active');
 				}
-				sliderItem[count].classList.add('active');
-				if(sliderItem[count].classList.contains('active')){
-					addContentModal(sliderItem[count])
-				}
+				addClassBox(count)
+				
 			})
 
 			arrowNext.addEventListener('click', ()=>{
 				count++;
+				sliderItem[count - 1].classList.remove('active');
 				if(count > sliderItem.length - 1){
 					count = 0;
+					sliderItem[sliderItem.length - 1].classList.remove('active');
 				}
-				sliderItem[count].classList.add('active');
-				if(sliderItem[count].classList.contains('active')){
-					addContentModal(sliderItem[count])
-				}
+				addClassBox(count)
 			})
 
 			modalBoxSlider.addEventListener('click', function(e){
@@ -307,6 +313,11 @@
 					this.classList.remove('open');
 					document.body.removeAttribute('style')
 				}
+			})
+
+			closeModal.addEventListener('click', ()=>{
+				modalBoxSlider.classList.remove('open');
+				document.body.removeAttribute('style')
 			})
 		</script>
     </body>

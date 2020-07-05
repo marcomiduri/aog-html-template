@@ -200,27 +200,22 @@ h5 {
           transform: rotate(180deg);
 }
 
-.arrow__min {
-  width: 9px;
-  height: 9px;
-  display: inline-block;
-  border-top: 2px solid #2C5DE5;
-  border-right: 2px solid #2C5DE5;
-  position: relative;
+.close__modal {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/svg/close.svg") no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.arrow__min:before {
-  content: '';
-  display: block;
-  width: 2px;
-  position: absolute;
-  height: 10px;
-  top: -1.5px;
-  left: 50%;
-  background: #2C5DE5;
-  -webkit-transform: translateX(-50%) rotate(45deg);
-      -ms-transform: translateX(-50%) rotate(45deg);
-          transform: translateX(-50%) rotate(45deg);
+.close__modal:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .header {
@@ -919,20 +914,17 @@ h5 {
   z-index: 2;
 }
 
-@media screen and (min-width: 1100px) {
-  .workers__modal .arrow__btn.prev {
-    left: 5%;
-  }
-  .workers__modal .arrow__btn.next {
-    right: 5%;
-  }
-}
-
 .workers__modal .arrow__btn.prev {
   left: 0%;
   -webkit-transform: translateY(-50%) rotate(180deg);
       -ms-transform: translateY(-50%) rotate(180deg);
           transform: translateY(-50%) rotate(180deg);
+}
+
+@media screen and (min-width: 1100px) {
+  .workers__modal .arrow__btn.prev {
+    left: 5%;
+  }
 }
 
 .workers__modal .arrow__btn.next {
@@ -942,10 +934,17 @@ h5 {
           transform: translateY(-50%);
 }
 
+@media screen and (min-width: 1100px) {
+  .workers__modal .arrow__btn.next {
+    right: 6%;
+  }
+}
+
 .workers__modal .modal__inner {
   background: #fff;
   padding: 20px;
   width: 80%;
+  position: relative;
   margin-bottom: 200px;
   -webkit-transform: translateY(10%);
       -ms-transform: translateY(10%);
@@ -957,6 +956,12 @@ h5 {
     padding: 100px;
     width: 74.64%;
   }
+}
+
+.workers__modal .modal__inner .close__modal {
+  position: absolute;
+  top: -7%;
+  right: -5%;
 }
 
 .workers__modal .modal__inner h5 {
@@ -1573,19 +1578,27 @@ h5 {
 }
 
 .shareholders__modal .inner__box {
-  max-width: 571px;
+  width: 80%;
   padding: 18px 20px 20px;
   background: #fff;
   -webkit-transform: translateY(30%);
       -ms-transform: translateY(30%);
           transform: translateY(30%);
   margin-bottom: 300px;
+  position: relative;
 }
 
 @media screen and (min-width: 640px) {
   .shareholders__modal .inner__box {
     padding: 58px 90px 90px;
+    max-width: 571px;
   }
+}
+
+.shareholders__modal .close__modal {
+  position: absolute;
+  top: -7%;
+  right: -5%;
 }
 
 .shareholders__modal .f-item {

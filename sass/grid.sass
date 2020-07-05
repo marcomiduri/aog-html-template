@@ -130,38 +130,20 @@ input::-webkit-input-placeholder, input::-moz-placeholder, input:-moz-placeholde
 /*start btn up*/
 .btn-up
 	display: block
-	background: $btn-up-backgound
-	border-radius: 90%
+	background: url('../img/svg/arrow_right.svg') no-repeat
 	position: fixed
-	width: 50px
-	height: 50px
-	z-index: 1000
-	right: 10px
-	bottom: -50px
+	width: 58px
+	height: 58px
+	z-index: 10
+	right: 12px
+	bottom: -70px
 	cursor: pointer
 	outline: 0!important
 	transition: 0.4s
 	opacity: 0.6
-	&:after
-		content: ''
-		width: 10px
-		height: 10px
-		border-top: 2px solid #fff
-		border-left: 2px solid #fff
-		-webkit-transform: rotate(45deg) 
-		-moz-transform: rotate(45deg) 
-		-ms-transform: rotate(45deg) 
-		-o-transform: rotate(45deg) 
-		transform: rotate(45deg) 
-		position: absolute
-		top: 4px
-		bottom: 0
-		left: 0
-		right: 0
-		margin: auto
-
+	transform: rotate(-90deg)
 	&.show
-		bottom: 10px
+		bottom: 12px
 /*end btn up*/
 
 /*flex-blocks grid layout*/	
