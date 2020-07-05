@@ -171,6 +171,35 @@ h5 {
   margin-left: 4px;
 }
 
+.arrow__btn {
+  display: block;
+  width: 45px;
+  height: 45px;
+  background: url("../img/svg/arrow_right.svg") no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 1100px) {
+  .arrow__btn {
+    width: 58px;
+    height: 58px;
+  }
+}
+
+.arrow__btn:hover {
+  opacity: 0.7;
+}
+
+.arrow__btn.prev {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .arrow__min {
   width: 9px;
   height: 9px;
@@ -875,6 +904,7 @@ h5 {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+  overflow: auto;
   background: rgba(0, 0, 0, 0.6);
 }
 
@@ -883,10 +913,50 @@ h5 {
   pointer-events: initial;
 }
 
+.workers__modal .arrow__btn {
+  position: fixed;
+  top: 50%;
+  z-index: 2;
+}
+
+@media screen and (min-width: 1100px) {
+  .workers__modal .arrow__btn.prev {
+    left: 5%;
+  }
+  .workers__modal .arrow__btn.next {
+    right: 5%;
+  }
+}
+
+.workers__modal .arrow__btn.prev {
+  left: 0%;
+  -webkit-transform: translateY(-50%) rotate(180deg);
+      -ms-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+.workers__modal .arrow__btn.next {
+  right: 0%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .workers__modal .modal__inner {
   background: #fff;
-  padding: 100px;
-  width: 74.64%;
+  padding: 20px;
+  width: 80%;
+  margin-bottom: 200px;
+  -webkit-transform: translateY(10%);
+      -ms-transform: translateY(10%);
+          transform: translateY(10%);
+}
+
+@media screen and (min-width: 1100px) {
+  .workers__modal .modal__inner {
+    padding: 100px;
+    width: 74.64%;
+  }
 }
 
 .workers__modal .modal__inner h5 {
@@ -900,12 +970,14 @@ h5 {
 .workers__modal .modal__img {
   overflow: hidden;
   position: relative;
+  min-height: 400px;
   height: 25vw;
 }
 
 .workers__modal .modal__img img {
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
 }
 
 /********investors stylesheets*********/

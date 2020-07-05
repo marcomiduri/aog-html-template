@@ -196,15 +196,17 @@
 
 		<!-- modal box -->
 		<div class="workers__modal flex flex-center flex-align-center">
+			<span class="arrow__btn prev"></span>
+			<span class="arrow__btn next"></span>
 			<div class="modal__inner flex flex-sb">
 
-				<div class="modal__img f-item" data-smd-cols="4" data-offset="10">
+				<div class="modal__img f-item" data-cols="12" data-smd-cols="4" data-offset="10">
 					<img src="img/jpg/banner_bg.jpg" alt="workers">
 				</div>
 
-				<div class="f-item" data-smd-cols="8" data-offset="10">
+				<div class="f-item" data-cols="12" data-smd-cols="8" data-offset="10">
 					<h5>Name Name1</h5>
-					<span>description1</span>
+					<span class="description">description1</span>
 
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae modi odit aliquam cum ducimus sed dolore reiciendis quibusdam est aperiam. Illo quas reprehenderit quia maiores, porro repudiandae, aliquam ad voluptate odio harum ipsum itaque atque ullam dolores consequuntur inventore voluptas magni numquam facere quaerat quidem maxime nostrum accusamus? Iure, reiciendis!</p>
 
@@ -251,23 +253,59 @@
 
 			const sliderItem = document.querySelectorAll('.slider__item');
 			const modalBoxSlider = document.querySelector('.workers__modal');
+			let count = 0;
+			const addContentModal = function(item){
+				let modalTitle = item.querySelector('h5'),
+					modalDescription = item.querySelector('span'),
+					imgSrc = item.querySelector('img').getAttribute('src');
 
-			sliderItem.forEach(item => {
+				modalBoxSlider.querySelector('img').setAttribute('src', `${imgSrc}`)
+				modalBoxSlider.querySelector('h5').textContent = modalTitle.textContent;
+				modalBoxSlider.querySelector('.description').textContent = modalDescription.textContent;
+			}
+
+			const arrowNext = modalBoxSlider.querySelector('.next');
+			const arrowPrev = modalBoxSlider.querySelector('.prev');
+
+			sliderItem.forEach((item, i) => {
 				item.addEventListener('click', function(){
-					const modalTitle = this.querySelector('h5'),
-						modalDescription = this.querySelector('span'),
-						imgSrc = this.querySelector('img').getAttribute('src');
+					count = i;
+					sliderItem[count].classList.add('show');
 					modalBoxSlider.classList.add('open');
-
-					modalBoxSlider.querySelector('img').setAttribute('src', `${imgSrc}`)
-					modalBoxSlider.querySelector('h5').textContent = modalTitle.textContent;
-					modalBoxSlider.querySelector('span').textContent = modalDescription.textContent;
+					document.body.setAttribute('style', 'overflow: hidden');
+					addContentModal(this);
+					return count;
 				})
+				return count;
 			});
+			
+			
+			arrowPrev.addEventListener('click', ()=>{
+				count--;
+				if(count < 0){
+					count = sliderItem.length - 1;
+				}
+				sliderItem[count].classList.add('active');
+				if(sliderItem[count].classList.contains('active')){
+					addContentModal(sliderItem[count])
+				}
+			})
+
+			arrowNext.addEventListener('click', ()=>{
+				count++;
+				if(count > sliderItem.length - 1){
+					count = 0;
+				}
+				sliderItem[count].classList.add('active');
+				if(sliderItem[count].classList.contains('active')){
+					addContentModal(sliderItem[count])
+				}
+			})
 
 			modalBoxSlider.addEventListener('click', function(e){
 				if(e.target == this){
-					this.classList.remove('open')
+					this.classList.remove('open');
+					document.body.removeAttribute('style')
 				}
 			})
 		</script>

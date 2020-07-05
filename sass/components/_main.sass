@@ -310,15 +310,37 @@
         height: 100vh
         z-index: 10
         transition: 0.3s
+        overflow: auto
         background: rgba(0, 0, 0, 0.6)
         &.open
             opacity: 1
             pointer-events: initial
+        
+        .arrow__btn
+            position: fixed
+            top: 50%
+            z-index: 2
+            @media screen and (min-width: #{$dw-xld})
+                &.prev
+                    left: 5%
+                &.next
+                    right: 5%
+            &.prev
+                left: 0%
+                transform: translateY(-50%) rotate(180deg)
+            &.next
+                right: 0%
+                transform: translateY(-50%)
         .modal
             &__inner
                 background: #fff
-                padding: 100px
-                width: 74.64%
+                padding: 20px
+                width: 80%
+                margin-bottom: 200px
+                transform: translateY(10%)
+                @media screen and (min-width: #{$dw-xld})
+                    padding: 100px
+                    width: 74.64%
                 h5
                     font-size: 30px
                 
@@ -327,10 +349,12 @@
             &__img
                 overflow: hidden
                 position: relative
+                min-height: 400px
                 height: 25vw
                 img
-                    height: 100%
-                    width: 100%
+                    min-height: 100%
+                    min-width: 100%
+                    width: auto
 
 
 /********investors stylesheets*********/
