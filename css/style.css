@@ -431,11 +431,12 @@ h5 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   top: 0;
   left: 0;
   height: 100%;
-  border-left: 1px solid #DCDCDC;
-  border-right: 1px solid #DCDCDC;
   left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -443,6 +444,7 @@ h5 {
   opacity: 0.5;
   pointer-events: none;
   z-index: 5;
+  max-width: 1920px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -456,13 +458,13 @@ h5 {
   width: 1px;
   height: 100%;
   background: #DCDCDC;
-  margin-left: 22.1vw;
 }
 
 .banner {
   position: relative;
   background-image: url("../img/jpg/banner_bg.jpg");
   background-size: cover;
+  background-position: center top;
   background-repeat: no-repeat;
   height: 100vh;
   display: -webkit-box;
@@ -748,13 +750,19 @@ h5 {
 
 @media screen and (min-width: 780px) {
   .content__paragraph {
-    max-width: 60%;
+    max-width: 45%;
+    -webkit-transform: translateX(5.6vw);
+        -ms-transform: translateX(5.6vw);
+            transform: translateX(5.6vw);
   }
 }
 
 @media screen and (min-width: 1100px) {
   .content__paragraph {
     max-width: 30vw;
+    -webkit-transform: translateX(4vw);
+        -ms-transform: translateX(4vw);
+            transform: translateX(4vw);
   }
 }
 
@@ -767,6 +775,7 @@ h5 {
   background: #fff;
   width: 100%;
   padding: 40px 20px 40px;
+  max-width: 1920px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -822,11 +831,13 @@ h5 {
   overflow: hidden;
   background: #2C5DE5;
   margin-top: auto;
+  text-align: center;
 }
 
 .workers .slider__img img {
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -918,6 +929,7 @@ h5 {
   width: 100%;
   padding: 8.27vw 20px 7.68vw;
   margin: auto;
+  max-width: 1920px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -939,14 +951,19 @@ h5 {
 
 @media screen and (min-width: 780px) {
   .investors__content .content__paragraph {
-    max-width: 50%;
-    padding-left: 3.4vw;
+    max-width: 40%;
+    -webkit-transform: translateX(3.3vw);
+        -ms-transform: translateX(3.3vw);
+            transform: translateX(3.3vw);
   }
 }
 
 @media screen and (min-width: 1100px) {
   .investors__content .content__paragraph {
-    max-width: 26.2vw;
+    max-width: 39.75%;
+    -webkit-transform: translateX(2vw);
+        -ms-transform: translateX(2vw);
+            transform: translateX(2vw);
   }
 }
 
@@ -995,6 +1012,7 @@ h5 {
   width: 100%;
   padding: 10.833vw 20px 6.55vw;
   margin: auto;
+  max-width: 1920px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -1047,6 +1065,7 @@ h5 {
 .investors__contact .container {
   width: 100%;
   padding: 7.32vw 20px 9.64vw;
+  max-width: 1920px;
   margin: auto;
 }
 
@@ -1088,6 +1107,7 @@ h5 {
 .shareholders .container {
   width: 100%;
   margin: auto;
+  max-width: 1920px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -1098,6 +1118,7 @@ h5 {
 
 .shareholders__title .container {
   padding: 66px 20px;
+  max-width: 1920px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -1141,12 +1162,27 @@ h5 {
 
 .shareholders__information .container {
   padding: 7.56vw 20px 10vw;
+  max-width: 1920px;
 }
 
 @media screen and (min-width: 1100px) {
   .shareholders__information .container {
     padding: 7.56vw 0px 10vw;
   }
+}
+
+.shareholders__information .f-item {
+  margin-right: 0px;
+}
+
+@media screen and (min-width: 640px) {
+  .shareholders__information .f-item {
+    margin-right: 24px;
+  }
+}
+
+.shareholders__information .f-item:last-child {
+  margin-right: 0;
 }
 
 .shareholders__information .information__title {
@@ -1162,7 +1198,7 @@ h5 {
 .shareholders__information .information__title .title__icon {
   display: block;
   position: relative;
-  width: 70px;
+  min-width: 70px;
   height: 70px;
   padding: 17px 15px;
   border-radius: 11px;

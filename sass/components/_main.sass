@@ -2,16 +2,16 @@
     width: calc(100% - 40px)
     position: absolute
     display: flex
+    justify-content: space-between
     top: 0
     left: 0
     height: 100%
-    border-left: 1px solid #DCDCDC 
-    border-right: 1px solid #DCDCDC 
     left: 50%
     transform: translateX(-50%)
     opacity: 0.5
     pointer-events: none
     z-index: 5
+    max-width: 1920px
     @media screen and (min-width: #{$dw-xld})
         width: 66%
 
@@ -20,12 +20,13 @@
         width: 1px
         height: 100%
         background: #DCDCDC 
-        margin-left: 22.1vw
+        // margin-left: 22.1vw
     
 .banner
     position: relative
     background-image: url('../img/jpg/banner_bg.jpg')
     background-size: cover
+    background-position: center top
     background-repeat: no-repeat
     height: 100vh
     display: flex
@@ -228,9 +229,11 @@
         position: relative
         z-index: 1
         @media screen and (min-width: #{$dw-smd})
-            max-width: 60%
+            max-width: 45%
+            transform: translateX(5.6vw)
         @media screen and (min-width: #{$dw-xld})
             max-width: 30vw
+            transform: translateX(4vw)
 
 .workers
     padding: 40px 0px
@@ -239,6 +242,7 @@
         background: #fff
         width: 100%
         padding: 40px 20px 40px
+        max-width: 1920px
         @media screen and (min-width: #{$dw-xld})
             margin-left: auto
             width: 93.7%
@@ -276,9 +280,11 @@
             overflow: hidden
             background: #2C5DE5
             margin-top: auto
+            text-align: center
             img
-                height: 100%
-                width: 100%
+                min-height: 100%
+                min-width: 100%
+                width: auto
                 transition: all 0.3s ease
     
     .owl-dots
@@ -344,6 +350,7 @@
             width: 100%
             padding: 8.27vw 20px 7.68vw
             margin: auto
+            max-width: 1920px
             @media screen and (min-width: #{$dw-xld})
                 width: 66%
                 padding: 8.27vw 0px 7.68vw
@@ -357,11 +364,11 @@
                 color: #1A1A1A
                 margin-bottom: 6.5vw
                 @media screen and (min-width: #{$dw-smd})
-                    max-width: 50%
-                    padding-left: 3.4vw
+                    max-width: 40%
+                    transform: translateX(3.3vw)
                 @media screen and (min-width: #{$dw-xld})
-                    max-width: 26.2vw
-
+                    max-width: 39.75%
+                    transform: translateX(2vw)
                 .btn__text
                     margin-top: 18px
 
@@ -395,6 +402,7 @@
             width: 100%
             padding: 10.833vw 20px 6.55vw
             margin: auto
+            max-width: 1920px
             @media screen and (min-width: #{$dw-xld})
                 width: 66%
                 padding: 10.833vw 0px 6.55vw
@@ -434,6 +442,7 @@
         .container
             width: 100%
             padding: 7.32vw 20px 9.64vw
+            max-width: 1920px
             margin: auto
             @media screen and (min-width: #{$dw-xld})
                 width: 66%
@@ -466,11 +475,13 @@
     .container
         width: 100%
         margin: auto
+        max-width: 1920px
         @media screen and (min-width: #{$dw-xld})
             width: 66%
     &__title
         .container
             padding: 66px 20px
+            max-width: 1920px
             @media screen and (min-width: #{$dw-xld})
                 padding: 66px 0px
 
@@ -498,8 +509,16 @@
         background: #F4F5F9
         .container
             padding: 7.56vw 20px 10vw
+            max-width: 1920px
             @media screen and (min-width: #{$dw-xld})
                 padding: 7.56vw 0px 10vw
+        
+        .f-item
+            margin-right: 0px
+            @media screen and (min-width: #{$dw-md})
+                margin-right: 24px
+            &:last-child
+                margin-right: 0
         
         .information
             &__title
@@ -509,7 +528,7 @@
                 .title__icon
                     display: block
                     position: relative
-                    width: 70px
+                    min-width: 70px
                     height: 70px
                     padding: 17px 15px
                     border-radius: 11px
