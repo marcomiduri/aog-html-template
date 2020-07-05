@@ -20,8 +20,7 @@
         width: 1px
         height: 100%
         background: #DCDCDC 
-        &:nth-child(1)
-            margin: 0px 21.94vw
+        margin-left: 22.1vw
     
 .banner
     position: relative
@@ -456,13 +455,15 @@
     &__title
         .container
             padding: 66px 20px
+            @media screen and (min-width: #{$dw-xld})
+                padding: 66px 0px
 
         article
             display: flex
             align-items: center
         .title
             &__photo
-                width: 113px
+                min-width: 113px
                 height: 113px
                 position: relative
                 text-align: center
@@ -482,6 +483,8 @@
         background: #F4F5F9
         .container
             padding: 7.56vw 20px 10vw
+            @media screen and (min-width: #{$dw-xld})
+                padding: 7.56vw 0px 10vw
         
         .information
             &__title
@@ -510,11 +513,13 @@
             
             &__items
                 .item
-                    padding: 36px 40px 48px
+                    margin-bottom: 20px
+                    padding: 36px 15px 48px 40px
                     background: #FFFFFF
                     box-shadow: 0px 1.46302px 3.99006px rgba(32, 32, 32, 0.0444282), 0px 4.91399px 13.4018px rgba(32, 32, 32, 0.0655718), 0px 22px 60px rgba(32, 32, 32, 0.11)
                     border-radius: 11px
-
+                    @media screen and (min-width: #{$dw-xld})
+                        margin-bottom: 0px
                     .title
                         color: #C1C7D0
                         font-weight: 500
@@ -529,80 +534,134 @@
                         font-size: 36px
                         line-height: 26px
                         color: #1A1A1A
+                        @media screen and (min-width: #{$dw-xld})
+                            font-size: 26px
+                        @media screen and (min-width: 1420px)
+                            font-size: 36px
 
     &__dashboards
-        background: #2C5DE5
+        background: linear-gradient(to bottom, #2C5DE5 60%, #000118 40%)
         .container
             padding: 6.49vw 20px 13.1vw
             @media screen and (min-width: #{$dw-xld})
                 padding: 6.49vw 0px 13.1vw
-        
-        table
-            border-spacing: 0px
-            border-collapse: collapse
-            margin-bottom: 14px
+
+        .title
+            display: flex
+            align-items: center
+            flex-wrap: wrap
+            font-weight: 600
+            font-size: 30px
+            line-height: 37px
+            color: #fff
+            margin-bottom: 8px
+            min-height: 80px
+            @media screen and (min-width: #{$dw-ld})
+                flex-wrap: nowrap
+            img
+                display: block
+                margin-right: 16px
+                width: 43px
+                height: 43px
+            span
+                display: block
+
+        .table__wrapp
+            overflow: auto
             width: 100%
+            margin-top: auto
+            margin-bottom: 14px
             &:last-child
-                margin-bottom: 0
-            thead
+                margin-bottom: 0px
+
+        .table
+            overflow: hidden
+            border-radius: 10px
+            min-width: 670px
+            @media screen and (min-width: #{$dw-ld})
+                min-width: auto
+            ul
+                display: flex
+                justify-content: space-between
+                align-items: center
+                li
+                    min-width: 120px
+                    max-width: 140px
+                    width: 100%
+            .thead
                 background: #EDEDED
-                font-weight: 500
+                font-weight: 600
                 font-size: 14px
                 line-height: 26px
                 color: #1A1A1A
                 text-align: left
-                th
-                    padding: 16px 0px 12px 0px
-                    &:first-child
-                        border-radius: 10px 0px 0px 0px
-                        padding-left: 42px
-                    &:last-child
-                        border-radius: 0px 10px 0px 0px
-                        width: 120px
-            tbody
+                padding: 16px 0px 12px 42px
+                border: 1px solid #E1E3EB
+                
+            
+            .tbody
                 background: #fff
-                tr
+                padding: 0px 0px 22px 42px
+                ul
+                    border-bottom: 1px solid #E1E3EB
+                    padding: 13px 0px 13px 0px
                     &:last-child
-                        td
-                            padding: 31px 0px 36px 0px
-                            border: none
-                            &:first-child
-                                border-radius: 0px 0px 0px 10px
-                                padding-left: 42px
-                            &:last-child
-                                border-radius: 0px 0px 10px 0px
-
-                td
-                    padding: 31px 0px 10px 0px
-                    border-bottom: 1px solid #dee2e6
-                    &:first-child
-                        padding-left: 42px
+                        border: none
         
-
         .contact__info
-            padding: 35px 48px 0px
-            background: #FFFFFF
-            border-radius: 10px
-            border: 1px solid #E1E3EB
-            &>div
-                padding-bottom: 44px
-                margin-bottom: 44px
-                border-bottom: 1px solid #E1E3EB
-                &:last-child
-                    border: none
-            .name
-                font-weight: 500
-                font-size: 14px
-                line-height: 26px
-                color: #1A1A1A
+            margin-top: 30px
+            @media screen and (min-width: #{$dw-ld})
+                margin-top: 0px
+            .inner__box
+                padding: 35px 48px 0px
+                background: #FFFFFF
+                border-radius: 10px
+                border: 1px solid #E1E3EB
+                &>div
+                    padding-bottom: 42px
+                    margin-bottom: 42px
+                    border-bottom: 1px solid #E1E3EB
+                    &:last-child
+                        border: none
+                .name
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 26px
+                    color: #1A1A1A
 
-            .description
-                font-weight: 600
-                font-size: 22px
-                line-height: 27px
-                color: #1A1A1A
-                margin-top: 6px
-                display: block
-        
+                .description
+                    font-weight: 600
+                    font-size: 22px
+                    line-height: 27px
+                    color: #1A1A1A
+                    margin-top: 6px
+                    display: block
+            
     &__beneficiaries
         margin-top: 80px
+        .table
+            .tbody
+                ul
+                    align-items: start
+                    padding: 32px 0px 16px 0px
+
+            .address
+                max-width: 230px
+    
+    &__private-form
+        margin-top: 80px
+        .inner__box
+            max-width: 720px
+            background: #fff
+            border: 1px solid #E1E3EB
+            border-radius: 10px
+            padding: 34px 50px
+            ul
+                display: flex
+                justify-content: space-between
+                align-items: center
+                li
+                    &:first-child
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 26px

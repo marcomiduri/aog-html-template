@@ -102,6 +102,69 @@ h5 {
   font-weight: 500;
 }
 
+.btn__download {
+  background: #EEF3FF;
+  padding: 6px 10px;
+  border-radius: 40px;
+  font-weight: 500;
+  color: #2C5DE5;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn__download::after {
+  content: '';
+  display: inline-block;
+  background: url("../img/svg/arrow-right-circle.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+}
+
+.btn__edit, .btn__add {
+  border-radius: 40px;
+  padding: 6px 12px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #2C5DE5;
+  margin-left: auto;
+}
+
+.btn__edit::after, .btn__add::after {
+  content: '';
+  display: inline-block;
+}
+
+.btn__edit::after {
+  background: url("../img/svg/edit.svg") no-repeat;
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
+
+.btn__add::after {
+  background: url("../img/svg/plus-circle.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+}
+
 .arrow__min {
   width: 9px;
   height: 9px;
@@ -383,10 +446,7 @@ h5 {
   width: 1px;
   height: 100%;
   background: #DCDCDC;
-}
-
-.lines .line:nth-child(1) {
-  margin: 0px 21.94vw;
+  margin-left: 22.1vw;
 }
 
 .banner {
@@ -1015,6 +1075,12 @@ h5 {
   padding: 66px 20px;
 }
 
+@media screen and (min-width: 1100px) {
+  .shareholders__title .container {
+    padding: 66px 0px;
+  }
+}
+
 .shareholders__title article {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1025,7 +1091,7 @@ h5 {
 }
 
 .shareholders__title .title__photo {
-  width: 113px;
+  min-width: 113px;
   height: 113px;
   position: relative;
   text-align: center;
@@ -1050,6 +1116,12 @@ h5 {
 
 .shareholders__information .container {
   padding: 7.56vw 20px 10vw;
+}
+
+@media screen and (min-width: 1100px) {
+  .shareholders__information .container {
+    padding: 7.56vw 0px 10vw;
+  }
 }
 
 .shareholders__information .information__title {
@@ -1088,11 +1160,18 @@ h5 {
 }
 
 .shareholders__information .information__items .item {
-  padding: 36px 40px 48px;
+  margin-bottom: 20px;
+  padding: 36px 15px 48px 40px;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 1.46302px 3.99006px rgba(32, 32, 32, 0.0444282), 0px 4.91399px 13.4018px rgba(32, 32, 32, 0.0655718), 0px 22px 60px rgba(32, 32, 32, 0.11);
           box-shadow: 0px 1.46302px 3.99006px rgba(32, 32, 32, 0.0444282), 0px 4.91399px 13.4018px rgba(32, 32, 32, 0.0655718), 0px 22px 60px rgba(32, 32, 32, 0.11);
   border-radius: 11px;
+}
+
+@media screen and (min-width: 1100px) {
+  .shareholders__information .information__items .item {
+    margin-bottom: 0px;
+  }
 }
 
 .shareholders__information .information__items .item .title {
@@ -1112,8 +1191,23 @@ h5 {
   color: #1A1A1A;
 }
 
+@media screen and (min-width: 1100px) {
+  .shareholders__information .information__items .item .inner {
+    font-size: 26px;
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  .shareholders__information .information__items .item .inner {
+    font-size: 36px;
+  }
+}
+
 .shareholders__dashboards {
-  background: #2C5DE5;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #2C5DE5), color-stop(40%, #000118));
+  background: -webkit-linear-gradient(top, #2C5DE5 60%, #000118 40%);
+  background: -o-linear-gradient(top, #2C5DE5 60%, #000118 40%);
+  background: linear-gradient(to bottom, #2C5DE5 60%, #000118 40%);
 }
 
 .shareholders__dashboards .container {
@@ -1126,92 +1220,142 @@ h5 {
   }
 }
 
-.shareholders__dashboards table {
-  border-spacing: 0px;
-  border-collapse: collapse;
+.shareholders__dashboards .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #fff;
+  margin-bottom: 8px;
+  min-height: 80px;
+}
+
+@media screen and (min-width: 960px) {
+  .shareholders__dashboards .title {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+.shareholders__dashboards .title img {
+  display: block;
+  margin-right: 16px;
+  width: 43px;
+  height: 43px;
+}
+
+.shareholders__dashboards .title span {
+  display: block;
+}
+
+.shareholders__dashboards .table__wrapp {
+  overflow: auto;
+  width: 100%;
+  margin-top: auto;
   margin-bottom: 14px;
+}
+
+.shareholders__dashboards .table__wrapp:last-child {
+  margin-bottom: 0px;
+}
+
+.shareholders__dashboards .table {
+  overflow: hidden;
+  border-radius: 10px;
+  min-width: 670px;
+}
+
+@media screen and (min-width: 960px) {
+  .shareholders__dashboards .table {
+    min-width: auto;
+  }
+}
+
+.shareholders__dashboards .table ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shareholders__dashboards .table ul li {
+  min-width: 120px;
+  max-width: 140px;
   width: 100%;
 }
 
-.shareholders__dashboards table:last-child {
-  margin-bottom: 0;
-}
-
-.shareholders__dashboards table thead {
+.shareholders__dashboards .table .thead {
   background: #EDEDED;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   line-height: 26px;
   color: #1A1A1A;
   text-align: left;
+  padding: 16px 0px 12px 42px;
+  border: 1px solid #E1E3EB;
 }
 
-.shareholders__dashboards table thead th {
-  padding: 16px 0px 12px 0px;
-}
-
-.shareholders__dashboards table thead th:first-child {
-  border-radius: 10px 0px 0px 0px;
-  padding-left: 42px;
-}
-
-.shareholders__dashboards table thead th:last-child {
-  border-radius: 0px 10px 0px 0px;
-  width: 120px;
-}
-
-.shareholders__dashboards table tbody {
+.shareholders__dashboards .table .tbody {
   background: #fff;
+  padding: 0px 0px 22px 42px;
 }
 
-.shareholders__dashboards table tbody tr:last-child td {
-  padding: 31px 0px 36px 0px;
+.shareholders__dashboards .table .tbody ul {
+  border-bottom: 1px solid #E1E3EB;
+  padding: 13px 0px 13px 0px;
+}
+
+.shareholders__dashboards .table .tbody ul:last-child {
   border: none;
 }
 
-.shareholders__dashboards table tbody tr:last-child td:first-child {
-  border-radius: 0px 0px 0px 10px;
-  padding-left: 42px;
-}
-
-.shareholders__dashboards table tbody tr:last-child td:last-child {
-  border-radius: 0px 0px 10px 0px;
-}
-
-.shareholders__dashboards table tbody td {
-  padding: 31px 0px 10px 0px;
-  border-bottom: 1px solid #dee2e6;
-}
-
-.shareholders__dashboards table tbody td:first-child {
-  padding-left: 42px;
-}
-
 .shareholders__dashboards .contact__info {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 960px) {
+  .shareholders__dashboards .contact__info {
+    margin-top: 0px;
+  }
+}
+
+.shareholders__dashboards .contact__info .inner__box {
   padding: 35px 48px 0px;
   background: #FFFFFF;
   border-radius: 10px;
   border: 1px solid #E1E3EB;
 }
 
-.shareholders__dashboards .contact__info > div {
-  padding-bottom: 44px;
-  margin-bottom: 44px;
+.shareholders__dashboards .contact__info .inner__box > div {
+  padding-bottom: 42px;
+  margin-bottom: 42px;
   border-bottom: 1px solid #E1E3EB;
 }
 
-.shareholders__dashboards .contact__info > div:last-child {
+.shareholders__dashboards .contact__info .inner__box > div:last-child {
   border: none;
 }
 
-.shareholders__dashboards .contact__info .name {
+.shareholders__dashboards .contact__info .inner__box .name {
   font-weight: 500;
   font-size: 14px;
   line-height: 26px;
   color: #1A1A1A;
 }
 
-.shareholders__dashboards .contact__info .description {
+.shareholders__dashboards .contact__info .inner__box .description {
   font-weight: 600;
   font-size: 22px;
   line-height: 27px;
@@ -1222,6 +1366,47 @@ h5 {
 
 .shareholders__beneficiaries {
   margin-top: 80px;
+}
+
+.shareholders__beneficiaries .table .tbody ul {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  padding: 32px 0px 16px 0px;
+}
+
+.shareholders__beneficiaries .table .address {
+  max-width: 230px;
+}
+
+.shareholders__private-form {
+  margin-top: 80px;
+}
+
+.shareholders__private-form .inner__box {
+  max-width: 720px;
+  background: #fff;
+  border: 1px solid #E1E3EB;
+  border-radius: 10px;
+  padding: 34px 50px;
+}
+
+.shareholders__private-form .inner__box ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shareholders__private-form .inner__box ul li:first-child {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
 }
 
 .footer {
