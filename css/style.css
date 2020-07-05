@@ -144,6 +144,11 @@ h5 {
           align-items: center;
   color: #2C5DE5;
   margin-left: auto;
+  outline: none;
+}
+
+.btn__edit::focus, .btn__add::focus {
+  outline: none;
 }
 
 .btn__edit::after, .btn__add::after {
@@ -1407,6 +1412,83 @@ h5 {
   font-weight: 600;
   font-size: 16px;
   line-height: 26px;
+}
+
+.shareholders__modal {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.shareholders__modal.open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.shareholders__modal .inner__box {
+  max-width: 571px;
+  padding: 18px 20px 20px;
+  background: #fff;
+  -webkit-transform: translateY(30%);
+      -ms-transform: translateY(30%);
+          transform: translateY(30%);
+  margin-bottom: 300px;
+}
+
+@media screen and (min-width: 640px) {
+  .shareholders__modal .inner__box {
+    padding: 58px 90px 90px;
+  }
+}
+
+.shareholders__modal .f-item {
+  margin-bottom: 21px;
+}
+
+.shareholders__modal .title {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 48px;
+  margin-bottom: 55px;
+  text-align: center;
+  width: 100%;
+}
+
+.shareholders__modal label {
+  font-size: 12px;
+  line-height: 16px;
+  display: block;
+  margin-bottom: 2px;
+  color: #172B4D;
+  text-transform: capitalize;
+}
+
+.shareholders__modal input {
+  width: 100%;
+  border: 1px solid #DFE1E6;
+  border-radius: 3px;
+  padding: 10px 12px;
+  color: #1A1A1A;
+  font-size: 14px;
 }
 
 .footer {

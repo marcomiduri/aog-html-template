@@ -382,7 +382,76 @@
 		</footer>
 		<!-- end footer page -->
 
+		<div class="shareholders__modal">
+			<div class="inner__box">
+				<h5 class="title">Add Beneficiary</h5>
+
+				<form action="">
+					<div class="flex flex-sb" >
+
+						<div class="f-item" data-cols="12" data-md-cols="6" data-offset="6">
+							<label for="firstName">first Name</label>
+							<input type="name" id="firstName" placeholder="First Name">
+						</div>
+
+						<div class="f-item" data-cols="12" data-md-cols="6" data-offset="6">
+							<label for="lastName">last Name</label>
+							<input type="name" id="lastName" placeholder="Last Name">
+						</div>
+
+						<div class="f-item" data-cols="12">
+							<label for="firstName">Address</label>
+							<input type="text" id="address" placeholder="Address">
+						</div>
+
+						<div class="f-item" data-cols="12">
+							<label for="firstName">Phone Number</label>
+							<input type="name" id="firstName" placeholder="Phone Number">
+						</div>
+
+						<div class="f-item" data-cols="12" data-md-cols="6" data-offset="6">
+							<label for="firstName">12 Month Cashflow</label>
+							<input type="name" id="firstName" placeholder="12 Month Cashflow">
+						</div>
+
+						<div class="f-item" data-cols="12" data-md-cols="6" data-offset="6">
+							<label for="firstName">Upline EVC</label>
+							<input type="name" id="firstName" placeholder="Upline EVC">
+						</div>
+
+						<div class="f-item" data-cols="12">
+							<label for="firstName">1st year persistency</label>
+							<input type="text" id="address" placeholder="1st year persistency">
+						</div>
+
+						<div class="f-item" data-cols="12">
+							<label for="firstName">Company Level</label>
+							<input type="name" id="firstName" placeholder="Company Level">
+						</div>
+
+
+					</div>
+				</form>
+			</div>
+		</div>
+
         <script src="js/lib/grid.js"></script>
 		<script src="js/script.js"></script>
+		<script>
+			const modalBeneficiaries = document.querySelector('.shareholders__modal');
+			const addBeneficiaries = document.querySelector('.shareholders .shareholders__beneficiaries .btn__add');
+
+			addBeneficiaries.addEventListener('click', ()=>{
+				modalBeneficiaries.classList.add('open');
+				document.body.setAttribute('style', 'overflow: hidden');
+			})
+
+			modalBeneficiaries.addEventListener('click', function(e){
+				if(e.target == this){
+					this.classList.remove('open');
+					document.body.removeAttribute('style');
+				}
+			})
+		</script>
     </body>
 </html>

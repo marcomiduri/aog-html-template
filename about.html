@@ -196,5 +196,29 @@
 
         <script src="js/lib/grid.js"></script>
 		<script src="js/script.js"></script>
+
+		<script>
+			const sliderItem = document.querySelectorAll('.slider__item');
+			const modalBoxSlider = document.querySelector('.workers__modal');
+
+			sliderItem.forEach(item => {
+				item.addEventListener('click', function(){
+					const modalTitle = this.querySelector('h5'),
+						modalDescription = this.querySelector('span'),
+						imgSrc = this.querySelector('img').getAttribute('src');
+					modalBoxSlider.classList.add('open');
+
+					modalBoxSlider.querySelector('img').setAttribute('src', `${imgSrc}`)
+					modalBoxSlider.querySelector('h5').textContent = modalTitle.textContent;
+					modalBoxSlider.querySelector('span').textContent = modalDescription.textContent;
+				})
+			});
+
+			modalBoxSlider.addEventListener('click', function(e){
+				if(e.target == this){
+					this.classList.remove('open')
+				}
+			})
+		</script>
     </body>
 </html>

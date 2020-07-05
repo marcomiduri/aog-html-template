@@ -83,29 +83,4 @@ window.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-
-	const sliderItem = document.querySelectorAll('.slider__item');
-	const modalBox = document.querySelector('.workers__modal');
-	// console.log(sliderItem);
-	
-
-	sliderItem.forEach(item => {
-		item.addEventListener('click', function(){
-			const modalTitle = this.querySelector('h5'),
-				modalDescription = this.querySelector('span'),
-				imgSrc = this.querySelector('img').getAttribute('src');
-			modalBox.classList.add('open');
-
-			modalBox.querySelector('img').setAttribute('src', `${imgSrc}`)
-			modalBox.querySelector('h5').textContent = modalTitle.textContent;
-			modalBox.querySelector('span').textContent = modalDescription.textContent;
-		})
-	});
-
-	modalBox.addEventListener('click', function(e){
-		if(e.target == this){
-			this.classList.remove('open')
-		}
-	})
-
 });
